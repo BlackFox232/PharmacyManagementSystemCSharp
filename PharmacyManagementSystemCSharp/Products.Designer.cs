@@ -56,6 +56,9 @@
             this.button4 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.mediBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pharmacyDataSet1 = new PharmacyManagementSystemCSharp.pharmacyDataSet1();
+            this.mediTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet1TableAdapters.MediTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,9 +69,6 @@
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.snameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mediBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharmacyDataSet1 = new PharmacyManagementSystemCSharp.pharmacyDataSet1();
-            this.mediTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet1TableAdapters.MediTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mediBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet1)).BeginInit();
@@ -341,67 +341,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(787, 150);
             this.dataGridView1.TabIndex = 49;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "quantity";
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            // 
-            // mfgDataGridViewTextBoxColumn
-            // 
-            this.mfgDataGridViewTextBoxColumn.DataPropertyName = "mfg";
-            this.mfgDataGridViewTextBoxColumn.HeaderText = "mfg";
-            this.mfgDataGridViewTextBoxColumn.Name = "mfgDataGridViewTextBoxColumn";
-            // 
-            // expDataGridViewTextBoxColumn
-            // 
-            this.expDataGridViewTextBoxColumn.DataPropertyName = "exp";
-            this.expDataGridViewTextBoxColumn.HeaderText = "exp";
-            this.expDataGridViewTextBoxColumn.Name = "expDataGridViewTextBoxColumn";
-            // 
-            // boxnoDataGridViewTextBoxColumn
-            // 
-            this.boxnoDataGridViewTextBoxColumn.DataPropertyName = "box_no";
-            this.boxnoDataGridViewTextBoxColumn.HeaderText = "box_no";
-            this.boxnoDataGridViewTextBoxColumn.Name = "boxnoDataGridViewTextBoxColumn";
-            // 
-            // aonDataGridViewTextBoxColumn
-            // 
-            this.aonDataGridViewTextBoxColumn.DataPropertyName = "a_on";
-            this.aonDataGridViewTextBoxColumn.HeaderText = "a_on";
-            this.aonDataGridViewTextBoxColumn.Name = "aonDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // sidDataGridViewTextBoxColumn
-            // 
-            this.sidDataGridViewTextBoxColumn.DataPropertyName = "s_id";
-            this.sidDataGridViewTextBoxColumn.HeaderText = "s_id";
-            this.sidDataGridViewTextBoxColumn.Name = "sidDataGridViewTextBoxColumn";
-            // 
-            // snameDataGridViewTextBoxColumn
-            // 
-            this.snameDataGridViewTextBoxColumn.DataPropertyName = "s_name";
-            this.snameDataGridViewTextBoxColumn.HeaderText = "s_name";
-            this.snameDataGridViewTextBoxColumn.Name = "snameDataGridViewTextBoxColumn";
-            // 
             // mediBindingSource
             // 
             this.mediBindingSource.DataMember = "Medi";
@@ -415,6 +354,67 @@
             // mediTableAdapter
             // 
             this.mediTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "quantity";
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Количество";
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            // 
+            // mfgDataGridViewTextBoxColumn
+            // 
+            this.mfgDataGridViewTextBoxColumn.DataPropertyName = "mfg";
+            this.mfgDataGridViewTextBoxColumn.HeaderText = "Дата изготовления";
+            this.mfgDataGridViewTextBoxColumn.Name = "mfgDataGridViewTextBoxColumn";
+            // 
+            // expDataGridViewTextBoxColumn
+            // 
+            this.expDataGridViewTextBoxColumn.DataPropertyName = "exp";
+            this.expDataGridViewTextBoxColumn.HeaderText = "Срок годности";
+            this.expDataGridViewTextBoxColumn.Name = "expDataGridViewTextBoxColumn";
+            // 
+            // boxnoDataGridViewTextBoxColumn
+            // 
+            this.boxnoDataGridViewTextBoxColumn.DataPropertyName = "box_no";
+            this.boxnoDataGridViewTextBoxColumn.HeaderText = "Номер товара";
+            this.boxnoDataGridViewTextBoxColumn.Name = "boxnoDataGridViewTextBoxColumn";
+            // 
+            // aonDataGridViewTextBoxColumn
+            // 
+            this.aonDataGridViewTextBoxColumn.DataPropertyName = "a_on";
+            this.aonDataGridViewTextBoxColumn.HeaderText = "Влияет на";
+            this.aonDataGridViewTextBoxColumn.Name = "aonDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // sidDataGridViewTextBoxColumn
+            // 
+            this.sidDataGridViewTextBoxColumn.DataPropertyName = "s_id";
+            this.sidDataGridViewTextBoxColumn.HeaderText = "Поставщик_id";
+            this.sidDataGridViewTextBoxColumn.Name = "sidDataGridViewTextBoxColumn";
+            // 
+            // snameDataGridViewTextBoxColumn
+            // 
+            this.snameDataGridViewTextBoxColumn.DataPropertyName = "s_name";
+            this.snameDataGridViewTextBoxColumn.HeaderText = "Имя поставщика";
+            this.snameDataGridViewTextBoxColumn.Name = "snameDataGridViewTextBoxColumn";
             // 
             // Products
             // 

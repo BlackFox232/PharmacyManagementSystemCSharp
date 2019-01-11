@@ -65,7 +65,7 @@ namespace PharmacyManagementSystemCSharp
 
                 if (dr.Read())
                 {
-                    MessageBox.Show("Inserted Supplier Data SuccessFully..");
+                    MessageBox.Show("Успешно..");
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
                         String str2 = "Select * from supp";
@@ -111,7 +111,7 @@ namespace PharmacyManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Supplier Id.");
+                    MessageBox.Show("Ошибка Id.");
                 }
             }
             catch (SqlException ex)

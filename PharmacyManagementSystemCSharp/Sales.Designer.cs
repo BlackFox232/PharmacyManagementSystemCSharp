@@ -61,6 +61,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pharmacyDataSet2 = new PharmacyManagementSystemCSharp.pharmacyDataSet2();
+            this.salesTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet2TableAdapters.salesTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,9 +76,6 @@
             this.expDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharmacyDataSet2 = new PharmacyManagementSystemCSharp.pharmacyDataSet2();
-            this.salesTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet2TableAdapters.salesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet2)).BeginInit();
@@ -404,79 +404,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(772, 150);
             this.dataGridView1.TabIndex = 49;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cidDataGridViewTextBoxColumn
-            // 
-            this.cidDataGridViewTextBoxColumn.DataPropertyName = "c_id";
-            this.cidDataGridViewTextBoxColumn.HeaderText = "c_id";
-            this.cidDataGridViewTextBoxColumn.Name = "cidDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // genDataGridViewTextBoxColumn
-            // 
-            this.genDataGridViewTextBoxColumn.DataPropertyName = "gen";
-            this.genDataGridViewTextBoxColumn.HeaderText = "gen";
-            this.genDataGridViewTextBoxColumn.Name = "genDataGridViewTextBoxColumn";
-            // 
-            // mobDataGridViewTextBoxColumn
-            // 
-            this.mobDataGridViewTextBoxColumn.DataPropertyName = "mob";
-            this.mobDataGridViewTextBoxColumn.HeaderText = "mob";
-            this.mobDataGridViewTextBoxColumn.Name = "mobDataGridViewTextBoxColumn";
-            // 
-            // addrDataGridViewTextBoxColumn
-            // 
-            this.addrDataGridViewTextBoxColumn.DataPropertyName = "addr";
-            this.addrDataGridViewTextBoxColumn.HeaderText = "addr";
-            this.addrDataGridViewTextBoxColumn.Name = "addrDataGridViewTextBoxColumn";
-            // 
-            // midDataGridViewTextBoxColumn
-            // 
-            this.midDataGridViewTextBoxColumn.DataPropertyName = "m_id";
-            this.midDataGridViewTextBoxColumn.HeaderText = "m_id";
-            this.midDataGridViewTextBoxColumn.Name = "midDataGridViewTextBoxColumn";
-            // 
-            // mnameDataGridViewTextBoxColumn
-            // 
-            this.mnameDataGridViewTextBoxColumn.DataPropertyName = "m_name";
-            this.mnameDataGridViewTextBoxColumn.HeaderText = "m_name";
-            this.mnameDataGridViewTextBoxColumn.Name = "mnameDataGridViewTextBoxColumn";
-            // 
-            // mfgDataGridViewTextBoxColumn
-            // 
-            this.mfgDataGridViewTextBoxColumn.DataPropertyName = "mfg";
-            this.mfgDataGridViewTextBoxColumn.HeaderText = "mfg";
-            this.mfgDataGridViewTextBoxColumn.Name = "mfgDataGridViewTextBoxColumn";
-            // 
-            // expDataGridViewTextBoxColumn
-            // 
-            this.expDataGridViewTextBoxColumn.DataPropertyName = "exp";
-            this.expDataGridViewTextBoxColumn.HeaderText = "exp";
-            this.expDataGridViewTextBoxColumn.Name = "expDataGridViewTextBoxColumn";
-            // 
-            // aonDataGridViewTextBoxColumn
-            // 
-            this.aonDataGridViewTextBoxColumn.DataPropertyName = "a_on";
-            this.aonDataGridViewTextBoxColumn.HeaderText = "a_on";
-            this.aonDataGridViewTextBoxColumn.Name = "aonDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
             // salesBindingSource
             // 
             this.salesBindingSource.DataMember = "sales";
@@ -490,6 +417,79 @@
             // salesTableAdapter
             // 
             this.salesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cidDataGridViewTextBoxColumn
+            // 
+            this.cidDataGridViewTextBoxColumn.DataPropertyName = "c_id";
+            this.cidDataGridViewTextBoxColumn.HeaderText = "Покупатель_id";
+            this.cidDataGridViewTextBoxColumn.Name = "cidDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // genDataGridViewTextBoxColumn
+            // 
+            this.genDataGridViewTextBoxColumn.DataPropertyName = "gen";
+            this.genDataGridViewTextBoxColumn.HeaderText = "Пол";
+            this.genDataGridViewTextBoxColumn.Name = "genDataGridViewTextBoxColumn";
+            // 
+            // mobDataGridViewTextBoxColumn
+            // 
+            this.mobDataGridViewTextBoxColumn.DataPropertyName = "mob";
+            this.mobDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.mobDataGridViewTextBoxColumn.Name = "mobDataGridViewTextBoxColumn";
+            // 
+            // addrDataGridViewTextBoxColumn
+            // 
+            this.addrDataGridViewTextBoxColumn.DataPropertyName = "addr";
+            this.addrDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.addrDataGridViewTextBoxColumn.Name = "addrDataGridViewTextBoxColumn";
+            // 
+            // midDataGridViewTextBoxColumn
+            // 
+            this.midDataGridViewTextBoxColumn.DataPropertyName = "m_id";
+            this.midDataGridViewTextBoxColumn.HeaderText = "Лекарство_id";
+            this.midDataGridViewTextBoxColumn.Name = "midDataGridViewTextBoxColumn";
+            // 
+            // mnameDataGridViewTextBoxColumn
+            // 
+            this.mnameDataGridViewTextBoxColumn.DataPropertyName = "m_name";
+            this.mnameDataGridViewTextBoxColumn.HeaderText = "Название лекарства";
+            this.mnameDataGridViewTextBoxColumn.Name = "mnameDataGridViewTextBoxColumn";
+            // 
+            // mfgDataGridViewTextBoxColumn
+            // 
+            this.mfgDataGridViewTextBoxColumn.DataPropertyName = "mfg";
+            this.mfgDataGridViewTextBoxColumn.HeaderText = "Дата изготовления";
+            this.mfgDataGridViewTextBoxColumn.Name = "mfgDataGridViewTextBoxColumn";
+            // 
+            // expDataGridViewTextBoxColumn
+            // 
+            this.expDataGridViewTextBoxColumn.DataPropertyName = "exp";
+            this.expDataGridViewTextBoxColumn.HeaderText = "Срок годности";
+            this.expDataGridViewTextBoxColumn.Name = "expDataGridViewTextBoxColumn";
+            // 
+            // aonDataGridViewTextBoxColumn
+            // 
+            this.aonDataGridViewTextBoxColumn.DataPropertyName = "a_on";
+            this.aonDataGridViewTextBoxColumn.HeaderText = "Влиет на";
+            this.aonDataGridViewTextBoxColumn.Name = "aonDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // Sales
             // 

@@ -54,6 +54,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.payBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pharmacyDataSet3 = new PharmacyManagementSystemCSharp.pharmacyDataSet3();
+            this.payTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet3TableAdapters.payTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,9 +66,6 @@
             this.aonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paytypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.payBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pharmacyDataSet3 = new PharmacyManagementSystemCSharp.pharmacyDataSet3();
-            this.payTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet3TableAdapters.payTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet3)).BeginInit();
@@ -322,63 +322,8 @@
             this.dataGridView1.DataSource = this.payBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 437);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(745, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(921, 150);
             this.dataGridView1.TabIndex = 48;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sidDataGridViewTextBoxColumn
-            // 
-            this.sidDataGridViewTextBoxColumn.DataPropertyName = "s_id";
-            this.sidDataGridViewTextBoxColumn.HeaderText = "s_id";
-            this.sidDataGridViewTextBoxColumn.Name = "sidDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // mobileDataGridViewTextBoxColumn
-            // 
-            this.mobileDataGridViewTextBoxColumn.DataPropertyName = "mobile";
-            this.mobileDataGridViewTextBoxColumn.HeaderText = "mobile";
-            this.mobileDataGridViewTextBoxColumn.Name = "mobileDataGridViewTextBoxColumn";
-            // 
-            // addrDataGridViewTextBoxColumn
-            // 
-            this.addrDataGridViewTextBoxColumn.DataPropertyName = "addr";
-            this.addrDataGridViewTextBoxColumn.HeaderText = "addr";
-            this.addrDataGridViewTextBoxColumn.Name = "addrDataGridViewTextBoxColumn";
-            // 
-            // mnameDataGridViewTextBoxColumn
-            // 
-            this.mnameDataGridViewTextBoxColumn.DataPropertyName = "m_name";
-            this.mnameDataGridViewTextBoxColumn.HeaderText = "m_name";
-            this.mnameDataGridViewTextBoxColumn.Name = "mnameDataGridViewTextBoxColumn";
-            // 
-            // aonDataGridViewTextBoxColumn
-            // 
-            this.aonDataGridViewTextBoxColumn.DataPropertyName = "a_on";
-            this.aonDataGridViewTextBoxColumn.HeaderText = "a_on";
-            this.aonDataGridViewTextBoxColumn.Name = "aonDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // paytypeDataGridViewTextBoxColumn
-            // 
-            this.paytypeDataGridViewTextBoxColumn.DataPropertyName = "pay_type";
-            this.paytypeDataGridViewTextBoxColumn.HeaderText = "pay_type";
-            this.paytypeDataGridViewTextBoxColumn.Name = "paytypeDataGridViewTextBoxColumn";
             // 
             // payBindingSource
             // 
@@ -394,11 +339,66 @@
             // 
             this.payTableAdapter.ClearBeforeFill = true;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sidDataGridViewTextBoxColumn
+            // 
+            this.sidDataGridViewTextBoxColumn.DataPropertyName = "s_id";
+            this.sidDataGridViewTextBoxColumn.HeaderText = " Продажа_id";
+            this.sidDataGridViewTextBoxColumn.Name = "sidDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // mobileDataGridViewTextBoxColumn
+            // 
+            this.mobileDataGridViewTextBoxColumn.DataPropertyName = "mobile";
+            this.mobileDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            this.mobileDataGridViewTextBoxColumn.Name = "mobileDataGridViewTextBoxColumn";
+            // 
+            // addrDataGridViewTextBoxColumn
+            // 
+            this.addrDataGridViewTextBoxColumn.DataPropertyName = "addr";
+            this.addrDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.addrDataGridViewTextBoxColumn.Name = "addrDataGridViewTextBoxColumn";
+            // 
+            // mnameDataGridViewTextBoxColumn
+            // 
+            this.mnameDataGridViewTextBoxColumn.DataPropertyName = "m_name";
+            this.mnameDataGridViewTextBoxColumn.HeaderText = "Название лекарства";
+            this.mnameDataGridViewTextBoxColumn.Name = "mnameDataGridViewTextBoxColumn";
+            // 
+            // aonDataGridViewTextBoxColumn
+            // 
+            this.aonDataGridViewTextBoxColumn.DataPropertyName = "a_on";
+            this.aonDataGridViewTextBoxColumn.HeaderText = "Влияет на";
+            this.aonDataGridViewTextBoxColumn.Name = "aonDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
+            // paytypeDataGridViewTextBoxColumn
+            // 
+            this.paytypeDataGridViewTextBoxColumn.DataPropertyName = "pay_type";
+            this.paytypeDataGridViewTextBoxColumn.HeaderText = "Тип оплаты";
+            this.paytypeDataGridViewTextBoxColumn.Name = "paytypeDataGridViewTextBoxColumn";
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(769, 602);
+            this.ClientSize = new System.Drawing.Size(936, 602);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.button3);
