@@ -375,11 +375,11 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Firebrick;
-            this.label14.Location = new System.Drawing.Point(172, 107);
+            this.label14.Location = new System.Drawing.Point(187, 107);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(162, 13);
+            this.label14.Size = new System.Drawing.Size(104, 13);
             this.label14.TabIndex = 46;
-            this.label14.Text = "Only Insert Id when search Sales";
+            this.label14.Text = "Только при поиске";
             // 
             // dataGridView1
             // 

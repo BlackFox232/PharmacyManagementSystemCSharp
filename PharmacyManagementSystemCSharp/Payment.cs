@@ -78,7 +78,7 @@ namespace PharmacyManagementSystemCSharp
 
                 if (dr.Read())
                 {
-                    MessageBox.Show("Inserted Payment Data SuccessFully..");
+                    MessageBox.Show("Успешно..");
 
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
@@ -143,7 +143,7 @@ namespace PharmacyManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Payment Id.");
+                    MessageBox.Show("Ошибка Id.");
                 }
             }
             catch (SqlException ex)

@@ -51,7 +51,7 @@ namespace PharmacyManagementSystemCSharp
 
                 if (dr.Read())
                 {
-                    MessageBox.Show("Inserted Customer Data SuccessFully..");
+                    MessageBox.Show("Успешно..");
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
@@ -80,6 +80,7 @@ namespace PharmacyManagementSystemCSharp
                     textBox2.Text = dr.GetValue(0).ToString();
                     textBox3.Text = dr.GetValue(2).ToString();
                     textBox4.Text = dr.GetValue(3).ToString();
+
                     if (dr["gen"].ToString() == "Male")
                     {
                         radioButton1.Checked = true;
@@ -91,7 +92,7 @@ namespace PharmacyManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Id.");
+                    MessageBox.Show("Ошибка Id.");
                 }
             }
             catch (SqlException ex)

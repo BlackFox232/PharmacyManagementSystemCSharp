@@ -21,14 +21,14 @@ namespace PharmacyManagementSystemCSharp
         {
             if (textBox1.Text == "admin" || textBox2.Text == "admin")
             {
-                MessageBox.Show("You are logged in successfully..");
+                MessageBox.Show("Успешно..");
                 this.Visible = false;
                 Home obj1 = new Home();
                 obj1.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Invalid Username Or Password.");
+                MessageBox.Show("Ошибка.");
             }
         }
 

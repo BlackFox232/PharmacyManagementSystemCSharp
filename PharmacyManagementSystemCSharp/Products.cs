@@ -67,7 +67,7 @@ namespace PharmacyManagementSystemCSharp
 
                 if (dr.Read())
                 {
-                    MessageBox.Show("Inserted Medicine Data SuccessFully..");
+                    MessageBox.Show("Успешно");
 
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
@@ -125,7 +125,7 @@ namespace PharmacyManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Medicine Id.");
+                    MessageBox.Show("Ошибка Id.");
                 }
             }
             catch (SqlException ex)
@@ -152,7 +152,7 @@ namespace PharmacyManagementSystemCSharp
 
                 if (dr.Read())
                 {
-                    MessageBox.Show("Medicine Data Updated Successfully.");
+                    MessageBox.Show("Успешно.");
 
                     textBox2.Text = "";
                     textBox3.Text = "";
@@ -177,7 +177,7 @@ namespace PharmacyManagementSystemCSharp
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Medicine Id.");
+                    MessageBox.Show("Ошибка Id.");
                 }
             }
             catch (SqlException ex)
@@ -197,7 +197,7 @@ namespace PharmacyManagementSystemCSharp
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Medicine Deleted Successfully.");
+                MessageBox.Show("Успешно.");
 
                 textBox2.Text = "";
                 textBox3.Text = "";

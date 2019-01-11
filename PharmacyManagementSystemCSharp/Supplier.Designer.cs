@@ -78,11 +78,11 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Firebrick;
-            this.label3.Location = new System.Drawing.Point(289, 24);
+            this.label3.Location = new System.Drawing.Point(254, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(197, 24);
+            this.label3.Size = new System.Drawing.Size(286, 24);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Supplier Information";
+            this.label3.Text = "Информация о поставщиках";
             // 
             // label2
             // 
@@ -118,7 +118,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(398, 233);
+            this.label6.Location = new System.Drawing.Point(434, 236);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 16;
@@ -214,9 +214,9 @@
             this.label12.ForeColor = System.Drawing.Color.Firebrick;
             this.label12.Location = new System.Drawing.Point(162, 107);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(193, 13);
+            this.label12.Size = new System.Drawing.Size(104, 13);
             this.label12.TabIndex = 49;
-            this.label12.Text = "Only Insert Id when search supplier Info";
+            this.label12.Text = "Только при поиске";
             // 
             // dataGridView1
             // 
