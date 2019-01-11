@@ -22,11 +22,14 @@ namespace PharmacyManagementSystemCSharp
         {
             // TODO: This line of code loads data into the 'pharmacyDataSet.supp' table. You can move, or remove it, as needed.
             this.suppTableAdapter.Fill(this.pharmacyDataSet.supp);
+
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             String str = "Select max(id) from supp;";
             SqlCommand cmd = new SqlCommand(str, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 String val = dr[0].ToString();
@@ -48,14 +51,18 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 String str = "Insert into supp(name,email,mobile,addr,s_code) values('" + textBox2.Text + "','" + textBox4.Text  + "','" + textBox5.Text + "','" + textBox6.Text + "','"+ textBox3.Text +"');";
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 String str1 = "select max(ID) from supp;";
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Inserted Supplier Data SuccessFully..");
@@ -86,11 +93,14 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select name,email,mobile,addr,s_code from supp where id='" + Convert.ToInt32(textBox1.Text) + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox2.Text = dr.GetValue(0).ToString();

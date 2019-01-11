@@ -45,13 +45,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pharmacyDataSet = new PharmacyManagementSystemCSharp.pharmacyDataSet();
             this.suppBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.suppTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSetTableAdapters.suppTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppBindingSource)).BeginInit();
@@ -71,9 +69,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(56, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 18);
+            this.label1.Size = new System.Drawing.Size(113, 18);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Supplier Id";
+            this.label1.Text = "Поставщик Id";
             // 
             // label3
             // 
@@ -92,9 +90,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(91, 156);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 18);
+            this.label2.Size = new System.Drawing.Size(41, 18);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Name";
+            this.label2.Text = "Имя";
             // 
             // label4
             // 
@@ -112,9 +110,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(409, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 18);
+            this.label5.Size = new System.Drawing.Size(79, 18);
             this.label5.TabIndex = 15;
-            this.label5.Text = "Mobile";
+            this.label5.Text = "Телефон";
             // 
             // label6
             // 
@@ -122,9 +120,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(398, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 18);
+            this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Address";
+            this.label6.Text = "Адрес";
             // 
             // label7
             // 
@@ -132,9 +130,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(29, 233);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 18);
+            this.label7.Size = new System.Drawing.Size(137, 18);
             this.label7.TabIndex = 17;
-            this.label7.Text = "Supplier Code";
+            this.label7.Text = "Код поставщика";
             // 
             // textBox2
             // 
@@ -183,7 +181,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(81, 26);
             this.button3.TabIndex = 25;
-            this.button3.Text = "Reset";
+            this.button3.Text = "Сброс";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -194,7 +192,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 26);
             this.button2.TabIndex = 24;
-            this.button2.Text = "Search";
+            this.button2.Text = "Поиск";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -203,21 +201,11 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(219, 295);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 26);
+            this.button1.Size = new System.Drawing.Size(97, 26);
             this.button1.TabIndex = 23;
-            this.button1.Text = "Save";
+            this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PharmacyManagementSystemCSharp.Properties.Resources.kashipara;
-            this.pictureBox1.Location = new System.Drawing.Point(604, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 48;
-            this.pictureBox1.TabStop = false;
             // 
             // label12
             // 
@@ -259,7 +247,6 @@
             this.ClientSize = new System.Drawing.Size(746, 538);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -277,9 +264,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Name = "Supplier";
-            this.Text = "Supplier";
+            this.Text = "Поставщики";
             this.Load += new System.EventHandler(this.Supplier_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.suppBindingSource)).EndInit();
@@ -306,7 +292,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView1;
         private pharmacyDataSet pharmacyDataSet;

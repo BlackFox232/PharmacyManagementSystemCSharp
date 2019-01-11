@@ -22,14 +22,18 @@ namespace PharmacyManagementSystemCSharp
         {
             // TODO: This line of code loads data into the 'pharmacyDataSet3.pay' table. You can move, or remove it, as needed.
             this.payTableAdapter.Fill(this.pharmacyDataSet3.pay);
+
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
+
             con.Open();
             String str = "Select max(id) from pay;";
             SqlCommand cmd = new SqlCommand(str, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 String val = dr[0].ToString();
+
                 if (val == "")
                 {
                     textBox1.Text = "1";
@@ -37,6 +41,7 @@ namespace PharmacyManagementSystemCSharp
                 else
                 {
                     int a;
+
                     a = Convert.ToInt32(dr[0].ToString());
                     a = a + 1;
                     textBox1.Text = a.ToString();
@@ -48,7 +53,9 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             string paymet = string.Empty;
+
             if (radioButton1.Checked)
             {
                 paymet = "Cash";
@@ -57,26 +64,33 @@ namespace PharmacyManagementSystemCSharp
             {
                 paymet = "Online";
             }
+
             try
             {
                 String str = "Insert into pay(s_id,name,mobile,addr,m_name,a_on,price,pay_type) values('" + textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox8.Text + "','" + paymet + "');";
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 String str1 = "select max(ID) from pay;";
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Inserted Payment Data SuccessFully..");
+
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
                         String str2 = "Select * from pay";
                         SqlCommand cmd2 = new SqlCommand(str2, con1);
                         SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
+
                         sda.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
+
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
@@ -98,15 +112,19 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select s_id,name,mobile,addr,m_name,a_on,price,pay_type from pay where id='" + Convert.ToInt32(textBox1.Text) + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox2.Text = dr.GetValue(0).ToString();
                     textBox3.Text = dr.GetValue(1).ToString();
+
                     if (dr["pay_type"].ToString() == "Cash")
                     {
                         radioButton1.Checked = true;
@@ -115,6 +133,7 @@ namespace PharmacyManagementSystemCSharp
                     {
                         radioButton2.Checked = true;
                     }
+
                     textBox4.Text = dr.GetValue(3).ToString();
                     textBox5.Text = dr.GetValue(4).ToString();
                     textBox6.Text = dr.GetValue(5).ToString();
@@ -148,11 +167,14 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select name,mob,addr,m_name,a_on,price from sales where id='" + textBox2.Text + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox3.Text = dr.GetValue(0).ToString();

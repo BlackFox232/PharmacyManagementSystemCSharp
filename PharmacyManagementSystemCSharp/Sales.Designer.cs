@@ -60,11 +60,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pharmacyDataSet2 = new PharmacyManagementSystemCSharp.pharmacyDataSet2();
-            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet2TableAdapters.salesTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,10 +73,12 @@
             this.expDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pharmacyDataSet2 = new PharmacyManagementSystemCSharp.pharmacyDataSet2();
+            this.salesTableAdapter = new PharmacyManagementSystemCSharp.pharmacyDataSet2TableAdapters.salesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -97,9 +95,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(71, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 18);
+            this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Sales Id";
+            this.label1.Text = "Продажа Id";
             // 
             // label3
             // 
@@ -108,9 +106,9 @@
             this.label3.ForeColor = System.Drawing.Color.Firebrick;
             this.label3.Location = new System.Drawing.Point(299, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 24);
+            this.label3.Size = new System.Drawing.Size(256, 24);
             this.label3.TabIndex = 16;
-            this.label3.Text = "Sales Information";
+            this.label3.Text = "Информация о продажах";
             // 
             // label2
             // 
@@ -118,9 +116,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(39, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 18);
+            this.label2.Size = new System.Drawing.Size(119, 18);
             this.label2.TabIndex = 19;
-            this.label2.Text = "Customer Id";
+            this.label2.Text = "Покупатель Id";
             // 
             // label4
             // 
@@ -128,9 +126,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(87, 206);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
+            this.label4.Size = new System.Drawing.Size(41, 18);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Name";
+            this.label4.Text = "Имя";
             // 
             // label5
             // 
@@ -138,9 +136,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(81, 327);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 18);
+            this.label5.Size = new System.Drawing.Size(79, 18);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Mobile";
+            this.label5.Text = "Телефон";
             // 
             // label6
             // 
@@ -148,9 +146,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(70, 389);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 18);
+            this.label6.Size = new System.Drawing.Size(55, 18);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Address";
+            this.label6.Text = "Адрес";
             // 
             // label7
             // 
@@ -158,9 +156,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(76, 267);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 18);
+            this.label7.Size = new System.Drawing.Size(40, 18);
             this.label7.TabIndex = 23;
-            this.label7.Text = "Gender";
+            this.label7.Text = "Пол";
             // 
             // label8
             // 
@@ -168,39 +166,39 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(428, 83);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 18);
+            this.label8.Size = new System.Drawing.Size(110, 18);
             this.label8.TabIndex = 24;
-            this.label8.Text = "Medicine Id";
+            this.label8.Text = "Лекарство Id";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(397, 143);
+            this.label9.Location = new System.Drawing.Point(375, 143);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 18);
+            this.label9.Size = new System.Drawing.Size(169, 18);
             this.label9.TabIndex = 25;
-            this.label9.Text = "Medicine Name";
+            this.label9.Text = "Название лекарства";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(445, 206);
+            this.label10.Location = new System.Drawing.Point(384, 209);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 18);
+            this.label10.Size = new System.Drawing.Size(160, 18);
             this.label10.TabIndex = 26;
-            this.label10.Text = "mfg Date";
+            this.label10.Text = "Дата изготовления";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(447, 267);
+            this.label11.Location = new System.Drawing.Point(419, 270);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 18);
+            this.label11.Size = new System.Drawing.Size(125, 18);
             this.label11.TabIndex = 27;
-            this.label11.Text = "exp Date";
+            this.label11.Text = "Срок годности";
             // 
             // label12
             // 
@@ -310,9 +308,9 @@
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Location = new System.Drawing.Point(262, 267);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(78, 20);
+            this.radioButton2.Size = new System.Drawing.Size(92, 20);
             this.radioButton2.TabIndex = 41;
-            this.radioButton2.Text = "Female";
+            this.radioButton2.Text = "Женский";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -322,10 +320,10 @@
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(175, 267);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(60, 20);
+            this.radioButton1.Size = new System.Drawing.Size(91, 20);
             this.radioButton1.TabIndex = 40;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
+            this.radioButton1.Text = "Мужской";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // button4
@@ -333,9 +331,9 @@
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(550, 437);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 26);
+            this.button4.Size = new System.Drawing.Size(88, 26);
             this.button4.TabIndex = 45;
-            this.button4.Text = "Delete";
+            this.button4.Text = "Удалить";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -344,9 +342,9 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(430, 437);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 26);
+            this.button3.Size = new System.Drawing.Size(91, 26);
             this.button3.TabIndex = 44;
-            this.button3.Text = "Update";
+            this.button3.Text = "Обновить";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -357,18 +355,18 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 26);
             this.button2.TabIndex = 43;
-            this.button2.Text = "Search";
+            this.button2.Text = "Поиск";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(190, 437);
+            this.button1.Location = new System.Drawing.Point(175, 437);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 26);
+            this.button1.Size = new System.Drawing.Size(96, 26);
             this.button1.TabIndex = 42;
-            this.button1.Text = "Save";
+            this.button1.Text = "Сохранить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -382,16 +380,6 @@
             this.label14.Size = new System.Drawing.Size(162, 13);
             this.label14.TabIndex = 46;
             this.label14.Text = "Only Insert Id when search Sales";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PharmacyManagementSystemCSharp.Properties.Resources.kashipara;
-            this.pictureBox1.Location = new System.Drawing.Point(665, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 48;
-            this.pictureBox1.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -415,20 +403,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(772, 150);
             this.dataGridView1.TabIndex = 49;
-            // 
-            // pharmacyDataSet2
-            // 
-            this.pharmacyDataSet2.DataSetName = "pharmacyDataSet2";
-            this.pharmacyDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataMember = "sales";
-            this.salesBindingSource.DataSource = this.pharmacyDataSet2;
-            // 
-            // salesTableAdapter
-            // 
-            this.salesTableAdapter.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -503,13 +477,26 @@
             this.priceDataGridViewTextBoxColumn.HeaderText = "price";
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataMember = "sales";
+            this.salesBindingSource.DataSource = this.pharmacyDataSet2;
+            // 
+            // pharmacyDataSet2
+            // 
+            this.pharmacyDataSet2.DataSetName = "pharmacyDataSet2";
+            this.pharmacyDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // salesTableAdapter
+            // 
+            this.salesTableAdapter.ClearBeforeFill = true;
+            // 
             // Sales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(807, 649);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -542,12 +529,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Name = "Sales";
-            this.Text = "Sales";
+            this.Text = "Продажи";
             this.Load += new System.EventHandler(this.Sales_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pharmacyDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -586,7 +572,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private pharmacyDataSet2 pharmacyDataSet2;
         private System.Windows.Forms.BindingSource salesBindingSource;

@@ -27,7 +27,9 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             string gen = string.Empty;
+
             if (radioButton1.Checked)
             {
                 gen = "Male";
@@ -40,10 +42,13 @@ namespace PharmacyManagementSystemCSharp
             {
                 String str = "Insert into cust(name,gen,mob,addr) values('"+textBox2.Text +"','"+ gen +"','"+ textBox3.Text  +"','"+ textBox4.Text  +"');";
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 String str1 = "select max(ID) from cust;";
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Inserted Customer Data SuccessFully..");
@@ -62,11 +67,14 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select name,gen,mob,addr from cust where id='" + Convert.ToInt32(textBox1.Text) + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox2.Text = dr.GetValue(0).ToString();
@@ -104,9 +112,11 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             String str = "Select max(id) from cust;";
             SqlCommand cmd = new SqlCommand(str, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 String val = dr[0].ToString();

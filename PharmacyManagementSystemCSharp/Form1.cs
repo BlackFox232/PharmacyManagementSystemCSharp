@@ -19,17 +19,17 @@ namespace PharmacyManagementSystemCSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (textBox1.Text == "Neeta Kadam" || textBox2.Text == "kneeta")
-            //{
-            //    MessageBox.Show("You are logged in successfully..");
-            //    this.Visible = false;
+            if (textBox1.Text == "admin" || textBox2.Text == "admin")
+            {
+                MessageBox.Show("You are logged in successfully..");
+                this.Visible = false;
                 Home obj1 = new Home();
                 obj1.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Invalid Username Or Password.");
-            //}
+            }
+            else
+            {
+                MessageBox.Show("Invalid Username Or Password.");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -22,14 +22,18 @@ namespace PharmacyManagementSystemCSharp
         {
             // TODO: This line of code loads data into the 'pharmacyDataSet1.Medi' table. You can move, or remove it, as needed.
             this.mediTableAdapter.Fill(this.pharmacyDataSet1.Medi);
+
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             String str = "Select max(id) from Medi;";
             SqlCommand cmd = new SqlCommand(str, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 String val = dr[0].ToString();
+
                 if (val == "")
                 {
                     textBox1.Text = "1";
@@ -37,6 +41,7 @@ namespace PharmacyManagementSystemCSharp
                 else
                 {
                     int a;
+
                     a = Convert.ToInt32(dr[0].ToString());
                     a = a + 1;
                     textBox1.Text = a.ToString();
@@ -48,26 +53,33 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 String str = "Insert into Medi(name,quantity,mfg,exp,box_no,a_on,price,s_id,s_name) values('" + textBox2.Text + "','" + textBox6.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox7.Text + "','" + textBox3.Text + "','" + textBox8.Text + "','" + textBox9.Text + "','" + textBox10.Text + "');";
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 String str1 = "select max(ID) from Medi;";
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Inserted Medicine Data SuccessFully..");
+
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
                         String str2 = "Select * from Medi";
                         SqlCommand cmd2 = new SqlCommand(str2, con1);
                         SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
+
                         sda.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
+
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
@@ -91,11 +103,14 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select name,quantity,mfg,exp,box_no,a_on,price,s_id,s_name from Medi where id='" + Convert.ToInt32(textBox1.Text) + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox2.Text = dr.GetValue(0).ToString();
@@ -123,17 +138,22 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "update Medi set name='"+ textBox2.Text + "',quantity='" + textBox6.Text + "',mfg='" + textBox4.Text + "',exp='" + textBox5.Text + "',box_no='" + textBox7.Text + "',a_on='" + textBox3.Text + "',price='" + textBox8.Text + "',s_id='" + textBox9.Text + "',s_name='" + textBox10.Text + "' where id='"+ textBox1.Text  +"'; ";
                 SqlCommand cmd = new SqlCommand(getcust, con);
+
                 cmd.ExecuteNonQuery();
+
                 string str1 = "select max(ID) from Medi;";
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Medicine Data Updated Successfully.");
+
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
@@ -143,12 +163,14 @@ namespace PharmacyManagementSystemCSharp
                     textBox8.Text = "";
                     textBox9.Text = "";
                     textBox10.Text = "";
+
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
                         String str2 = "Select * from Medi";
                         SqlCommand cmd2 = new SqlCommand(str2, con1);
                         SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
+
                         sda.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
@@ -172,8 +194,11 @@ namespace PharmacyManagementSystemCSharp
             {
                 string str = "delete from Medi where id='"+ textBox1.Text +"';";
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 MessageBox.Show("Medicine Deleted Successfully.");
+
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
@@ -183,12 +208,14 @@ namespace PharmacyManagementSystemCSharp
                 textBox8.Text = "";
                 textBox9.Text = "";
                 textBox10.Text = "";
+
                 using (con)
                 {
                     String str2 = "Select * from Medi";
                     SqlCommand cmd2 = new SqlCommand(str2, con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                     DataTable dt = new DataTable();
+
                     sda.Fill(dt);
                     dataGridView1.DataSource = new BindingSource(dt, null);
                 }

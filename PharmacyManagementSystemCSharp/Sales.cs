@@ -22,11 +22,14 @@ namespace PharmacyManagementSystemCSharp
         {
             // TODO: This line of code loads data into the 'pharmacyDataSet2.sales' table. You can move, or remove it, as needed.
             this.salesTableAdapter.Fill(this.pharmacyDataSet2.sales);
+
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             String str = "Select max(id) from sales;";
             SqlCommand cmd = new SqlCommand(str, con);
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 String val = dr[0].ToString();
@@ -48,7 +51,9 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             string gen = string.Empty;
+
             if (radioButton1.Checked)
             {
                 gen = "Male";
@@ -57,14 +62,18 @@ namespace PharmacyManagementSystemCSharp
             {
                 gen = "Female";
             }
+
             try
             {
                 String str = "Insert into sales(c_id,name,gen,mob,addr,m_id,m_name,mfg,exp,a_on,price) values('" + textBox2.Text + "','" + textBox3.Text + "','"+ gen +"','" + textBox4.Text + "','" + textBox5.Text + "','" + textBox6.Text + "','" + textBox7.Text + "','" + textBox8.Text + "','" + textBox9.Text + "','" + textBox10.Text + "','" + textBox11.Text + "');";
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 String str1 = "select max(ID) from sales;";
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Inserted Sales Data SuccessFully..");
@@ -74,6 +83,7 @@ namespace PharmacyManagementSystemCSharp
                         SqlCommand cmd2 = new SqlCommand(str2, con1);
                         SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
+
                         sda.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
@@ -100,16 +110,20 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select name,gen,mob,addr from cust where id='" + textBox2.Text + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox3.Text = dr.GetValue(0).ToString();
                     textBox4.Text = dr.GetValue(1).ToString();
                     textBox5.Text = dr.GetValue(2).ToString();
+
                     if (dr["gen"].ToString() == "Male")
                     {
                         radioButton1.Checked = true;
@@ -130,11 +144,14 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select name,mfg,exp,a_on,price from Medi where id='" + textBox6.Text + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox7.Text = dr.GetValue(0).ToString();
@@ -154,15 +171,19 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string getcust = "Select c_id,name,gen,mob,addr,m_id,m_name,mfg,exp,a_on,price from sales where id='" + Convert.ToInt32(textBox1.Text) + "';";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
                 SqlDataReader dr = cmd.ExecuteReader();
+
                 if (dr.Read())
                 {
                     textBox2.Text = dr.GetValue(0).ToString();
                     textBox3.Text = dr.GetValue(1).ToString();
+
                     if (dr["gen"].ToString() == "Male")
                     {
                         radioButton1.Checked = true;
@@ -171,6 +192,7 @@ namespace PharmacyManagementSystemCSharp
                     {
                         radioButton2.Checked = true;
                     }
+
                     textBox4.Text = dr.GetValue(3).ToString();
                     textBox5.Text = dr.GetValue(4).ToString();
                     textBox6.Text = dr.GetValue(5).ToString();
@@ -191,7 +213,9 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             string gen = string.Empty;
+
             if (radioButton1.Checked)
             {
                 gen = "Male";
@@ -200,17 +224,24 @@ namespace PharmacyManagementSystemCSharp
             {
                 gen = "Female";
             }
+
             try
             {
                 string getcust = "update sales set c_id='" + textBox2.Text + "',name='" + textBox3.Text + "',gen='" + gen + "',mob='" + textBox4.Text + "',addr='" + textBox5.Text + "',m_id='" + textBox6.Text + "',m_name='" + textBox7.Text + "',mfg='" + textBox8.Text + "',exp='" + textBox9.Text + "',a_on='"+ textBox10.Text  +"',price='" +textBox11.Text + "' where id='" + textBox1.Text + "'; ";
+
                 SqlCommand cmd = new SqlCommand(getcust, con);
+
                 cmd.ExecuteNonQuery();
+
                 string str1 = "select max(ID) from sales;";
+
                 SqlCommand cmd1 = new SqlCommand(str1, con);
                 SqlDataReader dr = cmd1.ExecuteReader();
+
                 if (dr.Read())
                 {
                     MessageBox.Show("Sales Data Updated Successfully.");
+
                     textBox2.Text = "";
                     textBox3.Text = "";
                     textBox4.Text = "";
@@ -220,12 +251,14 @@ namespace PharmacyManagementSystemCSharp
                     textBox8.Text = "";
                     textBox9.Text = "";
                     textBox10.Text = "";
+
                     using (SqlConnection con1 = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True"))
                     {
                         String str2 = "Select * from sales";
                         SqlCommand cmd2 = new SqlCommand(str2, con1);
                         SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                         DataTable dt = new DataTable();
+
                         sda.Fill(dt);
                         dataGridView1.DataSource = new BindingSource(dt, null);
                     }
@@ -245,12 +278,17 @@ namespace PharmacyManagementSystemCSharp
         {
             SqlConnection con = new SqlConnection(@"Data Source=BLACKFOX\SQLEXPRESS;AttachDbFilename=C:\Program Files\Microsoft SQL Server\MSSQL14.SQLEXPRESS\MSSQL\DATA\pharmacy.mdf;Integrated Security=True");
             con.Open();
+
             try
             {
                 string str = "delete from sales where id='" + textBox1.Text + "';";
+
                 SqlCommand cmd = new SqlCommand(str, con);
+
                 cmd.ExecuteNonQuery();
+
                 MessageBox.Show("Sales Record Deleted Successfully.");
+
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox4.Text = "";
@@ -260,12 +298,14 @@ namespace PharmacyManagementSystemCSharp
                 textBox8.Text = "";
                 textBox9.Text = "";
                 textBox10.Text = "";
+
                 using (con)
                 {
                     String str2 = "Select * from sales";
                     SqlCommand cmd2 = new SqlCommand(str2, con);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd2);
                     DataTable dt = new DataTable();
+
                     sda.Fill(dt);
                     dataGridView1.DataSource = new BindingSource(dt, null);
                 }
